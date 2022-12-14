@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmasTreeServiceWebApi", "XmasTreeServiceWebApi\XmasTreeServiceWebApi.csproj", "{442CA25A-A169-4131-89E3-61C51898A580}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmasTreeService.Core", "XmasTreeService.Core\XmasTreeService.Core.csproj", "{50B8B262-3F82-4688-8AF2-D9CF683A1087}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{442CA25A-A169-4131-89E3-61C51898A580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442CA25A-A169-4131-89E3-61C51898A580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{442CA25A-A169-4131-89E3-61C51898A580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B8B262-3F82-4688-8AF2-D9CF683A1087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B8B262-3F82-4688-8AF2-D9CF683A1087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B8B262-3F82-4688-8AF2-D9CF683A1087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B8B262-3F82-4688-8AF2-D9CF683A1087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -38,4 +38,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\XmasTreeService.Core\XmasTreeService.Core.csproj" />
+  </ItemGroup>
+
 </Project>

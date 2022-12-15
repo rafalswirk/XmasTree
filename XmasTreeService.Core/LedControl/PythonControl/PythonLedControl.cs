@@ -14,7 +14,7 @@ namespace XmasTreeService.Core.LedControl.PythonControl
 
         public void EnableLightingMode(LightingMode mode)
         {
-            _scriptManager.RunPythonScript($"ScriptsPath{mode.Id}");
+            _scriptManager.RunPythonScript(Path.Combine(ScriptsPath, mode.Id));
         }
 
         public IReadOnlyCollection<LightingMode> GetLightingModes()

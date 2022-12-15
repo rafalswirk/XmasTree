@@ -13,9 +13,22 @@ public class XmasTreeController : ControllerBase
 
     [HttpGet(Name = "GetLightingModes")]
     [Route("")]
-    public IEnumerable<string> Get()
+    public ActionResult<IEnumerable<string>> Get()
     {
         return _service.GetAllLightingModes().Select(m => m.Id).ToList();
     }
-    
+
+    [HttpPost]
+    [Route("[action]")]
+    public ActionResult SetLightingMode()
+    {
+        _service.SetLightingMode(new XmasTreeService.Core.Dto.LightingModeDto 
+        {
+            Id = "random-sparkles.py",
+            Name = string.Empty
+        });
+
+        return Ok();
+    }
+
 }

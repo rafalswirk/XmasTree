@@ -11,14 +11,14 @@ namespace XmasTreeService.Core.LedControl.PythonControl
     {
         public static Process _scriptExecutionProcess;
         private static object SyncObject = new();
-        public void RunPythonScript(string scriptName)
+        public void RunPythonScript(string scriptPath)
         {
             lock(SyncObject) 
             {
                 var start = new ProcessStartInfo
                 {
                     FileName = "python",
-                    Arguments = $"scripts//{scriptName}", //Path.Combine("scripts", "script.py");
+                    Arguments = scriptPath, //Path.Combine("scripts", "script.py");
                     UseShellExecute = false,
                     CreateNoWindow = false,
                     RedirectStandardOutput = false,

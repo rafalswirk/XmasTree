@@ -3,7 +3,7 @@ using XmasTreeService.Core.LedControl;
 
 namespace XmasTreeService.Services;
 
-public class XmasTreeService : IXmasTreeService
+internal class XmasTreeService : IXmasTreeService
 {
     private readonly ILedControl _control;
 

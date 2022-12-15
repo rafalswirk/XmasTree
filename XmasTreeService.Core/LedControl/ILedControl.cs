@@ -4,5 +4,7 @@ namespace XmasTreeService.Core.LedControl;
 
 interface ILedControl
 {
-    void EnableLedProgram(LightingMode mode);
+    void EnableLightingMode(LightingMode mode);
+
+    IReadOnlyCollection<LightingMode> GetLightingModes();
 }

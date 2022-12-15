@@ -1,6 +1,9 @@
+using System.Runtime.CompilerServices;
 using XmasTreeService.Core.DataModels;
 using XmasTreeService.Core.Dto;
 using XmasTreeService.Core.LedControl;
+
+[assembly:InternalsVisibleTo("XmasTreeServiceWebApi")]
 
 namespace XmasTreeService.Services;
 
@@ -13,11 +16,16 @@ internal class XmasTreeService : IXmasTreeService
         _control = control;
     }
 
-    IReadOnlyCollection<LightingModeDto> IXmasTreeService.GetAllLightingModes()
-        => _control.GetLightingModes().Select(Map<LightingModeDto>).ToList();
+    public IReadOnlyCollection<LightingModeDto> GetAllLightingModes()
+    {
+        return _control.GetLightingModes().Select(Map<LightingModeDto>).ToList();
 
-    void IXmasTreeService.SetLightingMode(LightingModeDto mode)
-        => _control.EnableLightingMode(Map<LightingMode>(mode));
+    }
+
+    public void SetLightingMode(LightingModeDto mode)
+    {
+        _control.EnableLightingMode(Map<LightingMode>(mode));
+    }
 
     private static T Map<T>(LightingMode mode) where T : LightingModeDto, new()
         => new T { Id = mode.Id, Name = string.Empty };

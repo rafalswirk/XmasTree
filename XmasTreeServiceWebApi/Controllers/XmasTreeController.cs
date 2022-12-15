@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using XmasTreeService.Core.DataModels;
+using XmasTreeService.Core.Dto;
 using XmasTreeService.Core.LedControl.PythonControl;
 using Service = XmasTreeService.Services;
 
@@ -20,11 +22,11 @@ public class XmasTreeController : ControllerBase
 
     [HttpPost]
     [Route("[action]")]
-    public ActionResult SetLightingMode()
+    public ActionResult SetLightingMode([FromBody] LightingModeDto dto)
     {
         _service.SetLightingMode(new XmasTreeService.Core.Dto.LightingModeDto 
         {
-            Id = "random-sparkles.py",
+            Id = dto.Id,
             Name = string.Empty
         });
 

@@ -18,7 +18,7 @@ namespace XmasTreeService.Core.LedControl.PythonControl
                 var start = new ProcessStartInfo
                 {
                     FileName = "python",
-                    Arguments = scriptPath, //Path.Combine("scripts", "script.py");
+                    Arguments = scriptPath,
                     UseShellExecute = false,
                     CreateNoWindow = false,
                     RedirectStandardOutput = false,

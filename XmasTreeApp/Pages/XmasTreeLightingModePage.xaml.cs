@@ -1,3 +1,4 @@
+using Microsoft.Maui.Graphics;
 using XmasTreeApp.ServiceConnection.Dto;
 using XmasTreeApp.ServiceConnection.RestAPI;
 
@@ -28,8 +29,10 @@ public partial class XmasTreeLightingModePage : ContentPage
             var button = new Button 
             {
                 Text = mode.Id,
-                
+                MaximumWidthRequest = 200,
             };
+            button.BorderWidth = 2;
+            button.BorderColor = Colors.DarkGray;
             button.Clicked += Button_Clicked;
             mainPanel.Add(button);
         }

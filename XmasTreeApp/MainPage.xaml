@@ -2,11 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XmasTreeApp.MainPage">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="White" Offset="0.1" />
+                <GradientStop Color="LightSkyBlue" Offset="0.8" />
+            </LinearGradientBrush>
+    </ContentPage.Background>
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
+            Spacing="20"
+            Padding="40,0"
             VerticalOptions="Center">
 
             <Image
@@ -16,16 +22,28 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Hello, World!"
+                Text="3D RGB Xmas Tree"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
+                HorizontalOptions="Center" />
+            <Label
+                Margin="10"
+                Text="For Raspberry Pi!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            <Label
+                Text=""
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="20"
                 HorizontalOptions="Center" />
 
             <Label
                 Text="Xmas Tree API url:"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
+                FontSize="20"
                 HorizontalOptions="Center" />
             <Entry
                 x:Name="entryServerUrl"
@@ -34,7 +52,6 @@
             <Button
                 x:Name="btnConnect"
                 Text="🎄 Connect 🎄"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 

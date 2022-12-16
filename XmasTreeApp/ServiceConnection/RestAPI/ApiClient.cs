@@ -22,7 +22,6 @@ namespace XmasTreeApp.ServiceConnection.RestAPI
 
         public async Task<IEnumerable<LightModeDto>> GetData()
         {
-            //Uri uri = new Uri("http://192.168.0.161:5000/xmastree");
             Uri uri = new Uri($"{_baseUrl}/xmastree");
             try
             {

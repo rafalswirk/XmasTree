@@ -9,7 +9,7 @@ using XmasTreeApp.ServiceConnection.Dto;
 
 namespace XmasTreeApp.ServiceConnection.RestAPI
 {
-    class ApiClient
+    public class ApiClient
     {
         private readonly HttpClient _client;
         private readonly string _baseUrl;

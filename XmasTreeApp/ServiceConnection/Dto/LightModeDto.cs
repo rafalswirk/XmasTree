@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XmasTreeApp.ServiceConnection.Dto
 {
-    class LightModeDto
+    public class LightModeDto
     {
         public string Id { get; set; }
     }

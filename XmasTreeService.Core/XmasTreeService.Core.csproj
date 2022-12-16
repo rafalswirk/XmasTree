@@ -15,7 +15,7 @@
     <None Update="scripts\random-sparkles.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="scripts\script.py">
+    <None Update="scripts\test-script.py">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="scripts\spin.py">

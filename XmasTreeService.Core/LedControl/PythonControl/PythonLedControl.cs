@@ -25,8 +25,8 @@ namespace XmasTreeService.Core.LedControl.PythonControl
         public IReadOnlyCollection<LightingMode> GetLightingModes()
         {
             var files = Directory.GetFiles(ScriptsPath)
-                .Where(f => !IgnoredScripts.Contains(f))
-                .Select(f => Path.GetFileName(f));
+                .Select(f => Path.GetFileNameWithoutExtension(f))
+                .Where(f => !IgnoredScripts.Contains(f));
             
             return files.Select(f => new LightingMode { Id = f }).ToList();
         }

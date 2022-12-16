@@ -13,7 +13,7 @@ namespace XmasTreeApp
         private async void OnCounterClicked(object sender, EventArgs e)
         {
             var client = new ApiClient(entryServerUrl.Text);
-            var ligthModes = await client.GetData();
+            var ligthModes = await client.GetLigthingModes();
             await Navigation.PushAsync(new XmasTreeLightingModePage(ligthModes, client));
         }
     }

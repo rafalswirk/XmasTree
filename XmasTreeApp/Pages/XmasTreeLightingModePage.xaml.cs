@@ -36,8 +36,9 @@ public partial class XmasTreeLightingModePage : ContentPage
 
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
-        
+        var button = sender as Button;
+        await _client.SetLigthingMode(_ligthModes.Single(x => x.Id == button.Text));
     }
 }

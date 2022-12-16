@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using XmasTreeApp.ServiceConnection.Dto;
+using static Android.Content.ClipData;
 
 namespace XmasTreeApp.ServiceConnection.RestAPI
 {
@@ -20,7 +21,7 @@ namespace XmasTreeApp.ServiceConnection.RestAPI
             _baseUrl = url;
         }
 
-        public async Task<IEnumerable<LightModeDto>> GetData()
+        public async Task<IEnumerable<LightModeDto>> GetLigthingModes()
         {
             Uri uri = new Uri($"{_baseUrl}/xmastree");
             try
@@ -39,6 +40,29 @@ namespace XmasTreeApp.ServiceConnection.RestAPI
                 return null;
             }
             return null;
+        }
+
+        public async Task<bool> SetLigthingMode(LightModeDto dto)
+        {
+            Uri uri = new Uri($"{_baseUrl}/xmastree/setlightingmode");
+            try
+            {
+                string json = JsonSerializer.Serialize<LightModeDto>(dto);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+                HttpResponseMessage response = await _client.PostAsync(uri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"\tERROR {0}", ex.Message);
+                return false;
+            }
+            return false;
         }
     }
 }

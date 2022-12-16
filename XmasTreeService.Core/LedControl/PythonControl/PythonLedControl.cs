@@ -11,15 +11,23 @@ namespace XmasTreeService.Core.LedControl.PythonControl
     {
         private readonly string ScriptsPath = $"{AppDomain.CurrentDomain.BaseDirectory}//scripts//";
         private readonly PythonScriptManager _scriptManager = new();
+        private readonly string[] IgnoredScripts = new string[] 
+        {
+            "test-script",
+            "tree"
+        };
 
         public void EnableLightingMode(LightingMode mode)
         {
-            _scriptManager.RunPythonScript(Path.Combine(ScriptsPath, mode.Id));
+            _scriptManager.RunPythonScript(Path.Combine(ScriptsPath, mode.Id + ".py"));
         }
 
         public IReadOnlyCollection<LightingMode> GetLightingModes()
         {
-            var files = Directory.GetFiles(ScriptsPath).Select(f => Path.GetFileName(f));
+            var files = Directory.GetFiles(ScriptsPath)
+                .Where(f => !IgnoredScripts.Contains(f))
+                .Select(f => Path.GetFileName(f));
+            
             return files.Select(f => new LightingMode { Id = f }).ToList();
         }
     }

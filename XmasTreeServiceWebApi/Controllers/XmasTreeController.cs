@@ -24,11 +24,7 @@ public class XmasTreeController : ControllerBase
     [Route("[action]")]
     public ActionResult SetLightingMode([FromBody] LightingModeDto dto)
     {
-        _service.SetLightingMode(new XmasTreeService.Core.Dto.LightingModeDto 
-        {
-            Id = dto.Id,
-            Name = string.Empty
-        });
+        _service.SetLightingMode(dto);
 
         return Ok();
     }

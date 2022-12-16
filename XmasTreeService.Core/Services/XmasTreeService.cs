@@ -28,8 +28,8 @@ internal class XmasTreeService : IXmasTreeService
     }
 
     private static T Map<T>(LightingMode mode) where T : LightingModeDto, new()
-        => new T { Id = mode.Id, Name = string.Empty };
+        => new T { Id = mode.Id};
 
     private static T Map<T>(LightingModeDto dto) where T : LightingMode, new()
-        => new T { Id = dto.Id, Name = string.Empty };
+        => new T { Id = dto.Id };
 }

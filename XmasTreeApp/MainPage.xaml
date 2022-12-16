@@ -10,7 +10,7 @@
             VerticalOptions="Center">
 
             <Image
-                Source="dotnet_bot.png"
+                Source="xmas_tree.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
@@ -22,15 +22,18 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Xmas Tree API url:"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
+            <Entry
+                x:Name="entryServerUrl"
+                Text="http://192.168.0.161:5000" MaximumWidthRequest="400"/>
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
+                x:Name="btnConnect"
+                Text="🎄 Connect 🎄"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />

@@ -6,7 +6,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using XmasTreeApp.ServiceConnection.Dto;
-using static Android.Content.ClipData;
 
 namespace XmasTreeApp.ServiceConnection.RestAPI
 {

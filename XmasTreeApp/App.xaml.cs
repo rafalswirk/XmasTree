@@ -1,4 +1,6 @@
-﻿namespace XmasTreeApp
+﻿using XmasTreeApp.Data.Settings;
+
+namespace XmasTreeApp
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage())
+            MainPage = new NavigationPage(new MainPage(new MauiPreferences()))
             {
                 BarBackgroundColor = Colors.LightSkyBlue
             };

@@ -10,7 +10,7 @@ namespace XmasTreeApp
             InitializeComponent();
         }
 
-        private async void OnCounterClicked(object sender, EventArgs e)
+        private async void OnConnectClicked(object sender, EventArgs e)
         {
             await Task.Run(async () => 
             {
@@ -20,10 +20,16 @@ namespace XmasTreeApp
                     var ligthModes = await client.GetLigthingModes();
                     await Dispatcher.DispatchAsync(async () => 
                     {
+                        if(ligthModes is null) 
+                        {
+                            lblConnectionIssue.Text = "Cannot connect to app server :(";
+                            return;
+                        }
+                        lblConnectionIssue.Text = string.Empty;
                         await Navigation.PushAsync(new XmasTreeLightingModePage(ligthModes, client));
                     });
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
             });

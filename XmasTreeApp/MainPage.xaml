@@ -20,40 +20,52 @@
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
+            <VerticalStackLayout>
+                <Label
+                    Text="3D RGB Xmas Tree"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center" />
+                <Label
+                    Margin="10"
+                    Text="For Raspberry Pi!"
+                    FontSize="18"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+            <Label
+                    Text=""
+                    VerticalOptions="Center"
+                    SemanticProperties.HeadingLevel="Level2"
+                    HorizontalOptions="Center" />
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label
+                    Text="API url:"
+                    VerticalOptions="Center"
+                    SemanticProperties.HeadingLevel="Level2"
+                    HorizontalOptions="Center" Margin="10" />
+                <Entry
+                    x:Name="entryServerUrl"
+                    Text="http://192.168.0.190:5000" MaximumWidthRequest="400"/>
+            </HorizontalStackLayout>
 
-            <Label
-                Text="3D RGB Xmas Tree"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            <Label
-                Margin="10"
-                Text="For Raspberry Pi!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="18"
-                HorizontalOptions="Center" />
-            <Label
-                Text=""
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="20"
-                HorizontalOptions="Center" />
 
-            <Label
-                Text="Xmas Tree API url:"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="20"
-                HorizontalOptions="Center" />
-            <Entry
-                x:Name="entryServerUrl"
-                Text="http://192.168.0.161:5000" MaximumWidthRequest="400"/>
+            <VerticalStackLayout Spacing="10">
+                <Label
+                    x:Name="lblConnectionIssue"
+                    Text=""
+                    TextColor="Red"
+                    FontAttributes="Bold"
+                    IsVisible="true"
+                    SemanticProperties.HeadingLevel="Level2"
+                    FontSize="12"
+                    HorizontalOptions="Center" />
 
-            <Button
-                x:Name="btnConnect"
-                Text="🎄 Connect 🎄"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                <Button
+                    x:Name="btnConnect"
+                    Text="🎄 Connect 🎄"
+                    Clicked="OnConnectClicked"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

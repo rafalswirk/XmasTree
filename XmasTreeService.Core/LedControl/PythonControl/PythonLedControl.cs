@@ -14,7 +14,8 @@ namespace XmasTreeService.Core.LedControl.PythonControl
         private readonly string[] IgnoredScripts = new string[] 
         {
             "test-script",
-            "tree"
+            "tree",
+            "rgbxmastree_api"
         };
 
         public void EnableLightingMode(LightingMode mode)

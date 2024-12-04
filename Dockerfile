@@ -16,9 +16,8 @@ RUN dotnet publish  --runtime linux-arm64 --self-contained -o out
 
 FROM mcr.microsoft.com/dotnet/runtime:8.0
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip python3-gpiozero && \
+    apt-get install -y python3 python3-pip python3-gpiozero python3-numpy  && \
     rm -rf /var/lib/apt/lists/*
-
 
 ARG ASPNETCORE_ENVIRONMENT
 ENV ASPNETCORE_ENVIRONMENT=$ASPNETCORE_ENVIRONMENT

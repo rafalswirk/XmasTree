@@ -17,7 +17,7 @@ namespace XmasTreeService.Core.LedControl.PythonControl
             {
                 var start = new ProcessStartInfo
                 {
-                    FileName = "python",
+                    FileName = "python3",
                     Arguments = scriptPath,
                     UseShellExecute = false,
                     CreateNoWindow = false,

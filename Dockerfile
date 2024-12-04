@@ -33,4 +33,3 @@ WORKDIR /App/XmasTreeServiceWebApi
 RUN echo "Copy binaries from build-env"
 COPY --from=build-env /App/src/Server/XmasTreeServiceWebApi/out .
 ENTRYPOINT ["dotnet", "XmasTreeServiceWebApi.dll", "--urls=http://0.0.0.0:5000/"]
-#CMD [./XmasTreeServiceWebApi]

@@ -26,3 +26,16 @@ Once you type right url press "Connect" button. Application will switch to secon
 List of scripts is automatically prepared by web api. Choose your favourite one and enjoy the show :)
 
 ![xmas-tree-gif](/docs/images/XmasTree-work.gif)
+
+# Docker image
+I prepared docker image that hosting web api. I tested with with Raspberry Pi 3. It works without any issues. Just be aware. I just want to wrap everythink in docker image. I didn't focus on image security or api refactoring. I just want to have it working out of the box for now :) I'm using for it old Raspberry Pi which isn't doing anything else.
+
+Here is image name: johny304/3drgbxmastree. Image was build for arm64 architecture.
+
+To run container use following command:
+
+``` 
+docker run -d --privileged -p 5000:5000 -it johny304/3drgbxmastree:0.0.1 
+```
+
+Parameter --privileged is needed to allow container access gpio.
